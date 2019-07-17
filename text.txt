@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset='utf-8'>
+<title>TEXT</title>
+<style>
+#content{
+        text-align : center;
+}
+</style>
+</head>
+<body>
+<form action="board_insert.php" method ="post">
+<div id='content'>
+<table align='center'>
+<tr>
+<td><strong>제목</strong></td>
+<td><input type="text" name="title" size='30'></td>
+</tr>
+</table>
+<br>
+<textarea name="content" rows='30' cols='40'></textarea>
+<br>
+<input type='submit' value='글쓰기'>
+<br><br>
+<input type='button' value='뒤로가기' onclick="location.href='login_result.php'">
+</div>
+</form>
+</body>
+</html>

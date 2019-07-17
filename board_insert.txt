@@ -1,0 +1,18 @@
+<?php
+session_set_cookie_params(0,"/","argos.or.kr",false,false);
+session_start();
+include './db_info.php';
+if(isset($_SESSION['user_name'])){
+        $id = $_SESSION['user_name'];
+        $title = $_POST['title'];
+        $text = $_POST['content'];
+        $query = "INSERT INTO content (id, title, text) VALUES ('$id', '$title', '$text')";
+        $result = mysqli_query($conn, $query);
+        echo "<script>alert('글 작성이 완료되었습니다.')</script>";
+        echo "<meta http-equiv='refresh' content='0; url=board.php'>";
+}
+else{
+        echo "<script>alert('글 작성에 실패했습니다.')</script>";
+        echo "<meta http-equiv='refresh' content='0; url=login_result.php'>";
+}
+?>

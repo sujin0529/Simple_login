@@ -1,0 +1,45 @@
+<?php
+include './db_info.php';
+$query = "SELECT * FROM content";
+$result = mysqli_query($conn, $query);
+?>
+<html lang="ko">
+<head>
+<meta charset='utf-8'>
+<title>BOARD</title>
+<style>
+td {padding-left : 20px;}
+#title{
+        text-align:center;
+        font-size : 24pt;
+        color:#33ccff;
+        margin-top:120px;
+}
+#back{
+        text-align:center;
+}
+</style>
+</head>
+<body>
+<div id='title'>
+<p><strong>BOARD</strong></p>
+</div>
+<div id='table'>
+<table align='center'>
+<tr align='center'>
+<th style ="color:skyblue">아이디</th>
+<th style = "color:skyblue">제목</th>
+</tr>
+<?php
+while($row=mysqli_fetch_array($result)){
+        printf("<tr align='center'><td>%s</td><td><a href='view.php?no=%d'>%s</a></td></tr>",$row['id'],$row['no'],$row['title']);
+}
+?>
+</table>
+</div>
+<br><br>
+<div id='back'>
+<input type='button' value='뒤로가기' onclick="location.href='login_result.php'">
+</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<?php
+session_set_cookie_params(0,"/","argos.or.kr",false,false);
+session_start();
+include './db_info.php';
+if(isset($_SESSION['user_name'])){
+        $id = $_SESSION['user_name'];
+        $query = "select * from db_info where id='$id'";
+        $result = mysqli_query($conn, $query);
+        $row = mysqli_fetch_array($result);
+
+}
+else {
+        echo "<script>alert('로그인이 필요합니다.')</script>";
+        echo "<meta http-equiv ='refresh' content='0; url = login.php'>";
+}
+echo "<strong>{$row['name']}</strong>님 환영합니다 :)";
+echo "&nbsp&nbsp&nbsp<a href='logout.php'>LOGOUT</a>";
+?>
+<html lang="ko">
+<head>
+<meta charset='utf-8'>
+<title>LOGIN_RESULT</title>
+</head>
+<body>
+<br><br>
+<p><strong style="color:#96C0CE; font-size:15pt">돌고래 보고 가새오</strong><br>
+<img src=http://vrthumb.imagetoday.co.kr/2017/03/28/tid050t002385.jpg>
+</p>
+<br><br>
+<p>글을 쓰고 싶다면? <a href="text.php">TEXT</a>
+<br><br>
+글을 보고 싶다면? <a href="board.php">BOARD</a>
+</p>
+
+</body>
+</html>

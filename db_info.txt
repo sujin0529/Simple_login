@@ -1,0 +1,13 @@
+<?php
+$host = 'localhost';
+$user='tnwls0529';
+$pw='qwer';
+$db='tnwls0529';
+
+$conn=mysqli_connect($host,$user,$pw,$db);
+mysqli_set_charset($conn,'utf8');
+
+if(!$conn)
+                echo "연결 실패";
+
+?>

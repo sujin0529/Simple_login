@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ko">
+        <head>
+                <meta charset = "utf-8">
+                <title>LOGIN</title>
+                <style>
+                        td {padding-bottom : 15px; padding-right : 10px;}
+                        #image{
+                                text-align : right;
+                                height : 10px;
+
+                        }
+                        #login{
+                                color : #33CCFF;
+                                text-align : center;
+                                font-size : 60pt;
+                                font-weight : bold;
+                                margin : 240px 0px 0px 0px;
+
+                        }
+                        #log{
+                                color : skyblue;
+                                font-weight : bold;
+
+                        }
+
+        </style>
+        </head>
+        <body>
+                <div id="image">
+                <img src="https://data.ac-illust.com/data/thumbnails/d7/d71fa5e3c9d38ca8b98ed920ebce2518_t.jpeg" alt="돌고래">
+                </div>
+                <div id="login">
+
+                        LOGIN
+                </div>
+
+                <br>
+
+                <form action="login_check.php" method="post">
+                <div id="log">
+                <table align="center">
+                <tr>
+                        <td>ID</td>
+                        <td><input type="text" name="name"></td>
+                </tr>
+                <tr>
+                        <td>PW</td>
+                        <td><input type="password" name="password"></td>
+                </tr>
+                </table>
+                </div>
+
+                <br>
+
+                <div style="text-align : center">
+                        <input type="submit" value="LOGIN">
+                        <br><br>
+                        <a href="join.php">회원가입</a>
+                </div>
+                </form>
+
+        </body>
+</html>
